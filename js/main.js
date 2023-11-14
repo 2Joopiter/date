@@ -24,6 +24,9 @@ class Student {
 	plusAge() {
 		this.age = this.age + 1;
 	}
+	renameSchool(txt) {
+		this.school = txt;
+	}
 }
 
 // 생성자를 통해서 2개의 인스턴스 객체 복사
@@ -32,7 +35,10 @@ const s2 = new Student('Emily', 21);
 console.log(s1, s2);
 
 //인스턴스가 생성된 이후 prototype의 메서드를 호출해서 일괄적으로 인스턴스의 구조를 변경 가능
-[s1, s2].forEach((el) => el.plusAge());
+[s1, s2].forEach((el) => {
+	el.plusAge();
+	el.renameSchool('ABC');
+});
 console.log(s1, s2);
 /*
 1. 객체리터럴식 생성방식
